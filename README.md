@@ -82,7 +82,6 @@ lib/print3d/           build123d helpers and their data (defaults, insert table)
 scripts/               install_lib.py (copy helpers into a project), orca_import.py (OrcaSlicer → printer.toml)
 templates/printer.toml every profile setting with its default
 tests/check_helpers.py builds every helper and coupon and checks the results
-PLAN.md                design notes, decisions and the sources behind the numbers
 ```
 
 ## Development
@@ -95,7 +94,7 @@ cad run tests/check_helpers.py [OUT_DIR]
 
 With `OUT_DIR`, every result is also exported as STL. Validate the plugin with `claude plugin validate .`.
 
-The default values are starting points from public design guides, insert datasheets and slicer sources, listed in [PLAN.md](PLAN.md). Test prints on your own printer beat any table.
+The default values are starting points from public design guides, insert datasheets and slicer sources. Test prints on your own printer beat any table.
 
 ## License
 
