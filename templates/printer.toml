@@ -1,0 +1,63 @@
+# Printer profile for text-to-3d-print. One file per printer + nozzle:
+#   printer.toml (single printer) or printer-<name>.toml (several).
+# Every key is optional; a missing key uses the default shown.
+# Fits are per side; holes and inserts on diameter; lengths in mm.
+
+[printer]
+name = "My Printer"
+# build_volume = [220, 220, 250]   # X Y Z; no default (bed-size checks are skipped)
+# nozzle = 0.4
+# line_width = 0.42                # default 1.05 x nozzle
+# layer_height = 0.2
+# first_layer_height = 0.2         # default = layer_height
+# min_layer_height = 0.08
+# max_layer_height = 0.3
+
+# What the slicer already compensates (filled by an OrcaSlicer import):
+# [slicer]
+# xy_hole_compensation = 0.0
+# xy_contour_compensation = 0.0
+# elephant_foot_compensation = 0.0
+# slice_closing_radius = 0.049
+# wall_loops = 3
+
+[material]
+active = "pla"                     # the [materials.*] table designs use by default
+
+[materials.pla]
+type = "PLA"                       # PLA, PETG, ABS, ASA, PC, PA, TPU, PLA Silk, Wood PLA, PLA-CF, PETG-CF, ...
+# max_overhang_deg = 45
+# max_bridge_mm = 15
+# teardrop_min_dia = 5
+# hole_oversize = 0.3
+# press_fit_per_side = 0.0
+# snug_fit_per_side = 0.1
+# clearance_per_side = 0.2
+# glue_gap_per_side = 0.2
+# nut_clearance_per_side = 0.15
+# snap_clearance_per_side = 0.25
+# pip_gap_xy = 0.3
+# pip_gap_z = 0.4                  # default 2 layers
+# heatset_oversize = 0.2           # added to the insert's datasheet hole
+# elephant_foot_chamfer = 0.4
+# corner_relief_dia = 0.84         # default 2 line widths
+# corner_slot = [1.0, 0.1]         # depth, width
+# support_gap_xy = 0.2
+# support_gap_z = 0.2              # default 1 layer
+# sacrificial_layers = 1
+# bridge_step_layers = 1
+# dovetail_angle_deg = 15
+# min_text_height = 4
+# shrinkage_pct = 0.3              # per material; compensate in the slicer
+
+# Calibrated insert holes override the insert table:
+# [materials.pla.heatset]
+# "M3x5.7" = { hole = 4.2 }
+
+# Provenance of values proven by test prints:
+# [materials.pla.calibrated]
+# clearance_per_side = "2026-01-31, fit gauge, 0.10-0.30 tested"
+
+# Another material: add a table and switch `active`, or name it when asking for a design.
+# [materials.petg]
+# type = "PETG"

@@ -1,0 +1,15 @@
+{
+  "name": "text-to-3d-print",
+  "version": "0.1.0",
+  "description": "Design parts for FDM 3D printing: print-aware modeling rules, fits, hardware, test prints and per-printer calibration. Complements text-to-cad.",
+  "author": {
+    "name": "Kevin N"
+  },
+  "homepage": "https://github.com/KevinNortier/text-to-3d-print",
+  "repository": "https://github.com/KevinNortier/text-to-3d-print",
+  "license": "MIT",
+  "keywords": ["3d-printing", "fdm", "cad", "build123d", "dfam"],
+  "dependencies": [
+    { "name": "text-to-cad", "marketplace": "text-to-cad" }
+  ]
+}

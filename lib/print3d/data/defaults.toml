@@ -1,0 +1,91 @@
+# Defaults for every printer.toml key, and per-material adjustments.
+# Fits are per side; holes and inserts on diameter; lengths in mm.
+# Keys ending in _layers / _lines / _factor are multipliers resolved by printer.py.
+
+[printer]
+nozzle = 0.4
+line_width_factor = 1.05          # line_width = nozzle * factor
+layer_height = 0.2
+# first_layer_height defaults to layer_height
+# build_volume has no default (bed-size checks are skipped)
+
+[material]
+type = "PLA"
+max_overhang_deg = 45.0
+max_bridge_mm = 15.0
+teardrop_min_dia = 5.0
+hole_oversize = 0.3
+press_fit_per_side = 0.0
+snug_fit_per_side = 0.1
+clearance_per_side = 0.2
+glue_gap_per_side = 0.2
+nut_clearance_per_side = 0.15
+snap_clearance_per_side = 0.25
+pip_gap_xy = 0.3
+pip_gap_z_layers = 2
+heatset_oversize = 0.2
+elephant_foot_chamfer = 0.4
+corner_relief_dia_lines = 2
+corner_slot = [1.0, 0.1]
+support_gap_xy = 0.2
+support_gap_z_layers = 1
+sacrificial_layers = 1
+bridge_step_layers = 1
+dovetail_angle_deg = 15.0
+min_text_height = 4.0
+
+# Per-material adjustments, applied to defaults only (never to values set in printer.toml).
+# fit_offset is added to every key in fit_keys. `base` inherits another entry first.
+[adjust]
+fit_keys = ["snug_fit_per_side", "clearance_per_side", "nut_clearance_per_side", "snap_clearance_per_side", "glue_gap_per_side"]
+
+[adjust.PLA]
+shrinkage_pct = 0.3
+
+[adjust.PETG]
+shrinkage_pct = 0.4
+fit_offset = 0.05
+max_bridge_mm = 10.0
+
+[adjust.ABS]
+shrinkage_pct = 0.8
+fit_offset = 0.05
+snap_clearance_per_side = 0.35
+warps = true
+
+[adjust.ASA]
+base = "ABS"
+shrinkage_pct = 0.7
+max_bridge_mm = 10.0
+
+[adjust.PC]
+base = "ABS"
+shrinkage_pct = 0.7
+
+[adjust.PA]
+base = "ABS"
+shrinkage_pct = 1.5
+
+[adjust.TPU]
+shrinkage_pct = 0.6
+clearance_per_side = 0.3
+pip_gap_xy = 0.5
+max_overhang_deg = 35.0
+max_bridge_mm = 5.0
+flexible = true
+
+[adjust.SILK]
+base = "PLA"
+warning = "Silk PLA is decorative: weak layers and brittle. Avoid loads, clips and threads."
+
+[adjust.WOOD]
+base = "PLA"
+warning = "Wood-filled PLA is decorative: weak and brittle. Use thicker walls, no clips or loads."
+
+[adjust.METAL]
+base = "PLA"
+warning = "Metal-filled PLA is decorative: heavy, brittle and abrasive. No clips or loads."
+
+[adjust.FIBRE]
+# applied on top of the base material for *-CF / *-GF types
+warning = "Fibre-filled material: stiff but brittle with weak layers; no snap-fits or impacts. Needs a hardened nozzle of at least 0.4 mm."

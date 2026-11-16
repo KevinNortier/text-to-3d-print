@@ -1,0 +1,158 @@
+# Heat-set inserts (knurled brass, the common ruthex / CNC Kitchen geometry).
+# d1 = knurl OD, d2 = tip OD, length = L, wall = minimum wall around the hole,
+# hole = datasheet hole (for a drilled hole; printed holes add heatset_oversize).
+# Depth of the hole: at least length + 1 mm.
+# `default = true` marks the insert used when only the thread is given.
+
+[inserts."M2x4"]
+thread = "M2"
+d1 = 3.6
+d2 = 3.1
+length = 4.0
+wall = 1.3
+hole = 3.2
+default = true
+
+[inserts."M2.5x5.7"]
+thread = "M2.5"
+d1 = 4.6
+d2 = 3.9
+length = 5.7
+wall = 1.6
+hole = 4.0
+default = true
+
+[inserts."M3x4"]
+thread = "M3"
+aliases = ["M3 short", "M3S", "M3Sx4"]
+d1 = 4.6
+d2 = 3.9
+length = 4.0
+wall = 1.6
+hole = 4.0
+
+[inserts."M3x5x4"]
+thread = "M3"
+aliases = ["M3 voron", "M3x4 voron"]
+d1 = 5.0
+d2 = 4.25
+length = 4.0
+wall = 1.3
+hole = 4.4
+
+[inserts."M3x5.7"]
+thread = "M3"
+d1 = 4.6
+d2 = 3.9
+length = 5.7
+wall = 1.6
+hole = 4.0
+default = true
+
+[inserts."M4x4"]
+thread = "M4"
+aliases = ["M4 short", "M4S", "M4Sx4"]
+d1 = 6.3
+d2 = 5.5
+length = 4.0
+wall = 2.1
+hole = 5.6
+
+[inserts."M4x8.1"]
+thread = "M4"
+d1 = 6.3
+d2 = 5.5
+length = 8.1
+wall = 2.1
+hole = 5.6
+default = true
+
+[inserts."M5x5.8"]
+thread = "M5"
+aliases = ["M5 short", "M5S", "M5Sx5.8"]
+d1 = 7.1
+d2 = 6.3
+length = 5.8
+wall = 2.6
+hole = 6.4
+
+[inserts."M5x9.5"]
+thread = "M5"
+d1 = 7.1
+d2 = 6.3
+length = 9.5
+wall = 2.6
+hole = 6.4
+default = true
+
+[inserts."M6x12.7"]
+thread = "M6"
+d1 = 8.7
+d2 = 7.9
+length = 12.7
+wall = 3.3
+hole = 8.0
+default = true
+
+[inserts."M8x12.7"]
+thread = "M8"
+d1 = 10.1
+d2 = 9.5
+length = 12.7
+wall = 4.5
+hole = 9.6
+default = true
+
+[inserts."#2-56x4"]
+thread = "#2-56"
+d1 = 3.6
+d2 = 3.1
+length = 4.0
+wall = 1.3
+hole = 3.2
+default = true
+
+[inserts."#4-40x5.7"]
+thread = "#4-40"
+d1 = 4.6
+d2 = 3.9
+length = 5.7
+wall = 1.6
+hole = 4.0
+default = true
+
+[inserts."#8-32x8.1"]
+thread = "#8-32"
+d1 = 6.3
+d2 = 5.5
+length = 8.1
+wall = 2.1
+hole = 5.6
+default = true
+
+[inserts."#10-24x9.5"]
+thread = "#10-24"
+d1 = 7.1
+d2 = 6.3
+length = 9.5
+wall = 2.6
+hole = 6.4
+default = true
+
+[inserts."1/4-20x12.7"]
+thread = "1/4-20"
+d1 = 8.7
+d2 = 7.9
+length = 12.7
+wall = 3.3
+hole = 8.0
+default = true
+
+[inserts."3/8-16x12.7"]
+thread = "3/8-16"
+d1 = 12.6
+d2 = 11.8
+length = 12.7
+wall = 6.0
+hole = 11.9
+default = true

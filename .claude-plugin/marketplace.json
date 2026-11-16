@@ -1,0 +1,15 @@
+{
+  "name": "text-to-3d-print",
+  "description": "Skills for designing parts for FDM 3D printing, complementing text-to-cad.",
+  "owner": {
+    "name": "Kevin N"
+  },
+  "allowCrossMarketplaceDependenciesOn": ["text-to-cad"],
+  "plugins": [
+    {
+      "name": "text-to-3d-print",
+      "source": "./",
+      "description": "Design parts for FDM 3D printing. Complements text-to-cad."
+    }
+  ]
+}
